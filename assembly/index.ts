@@ -1,12 +1,11 @@
-// Standard Massa AssemblyScript SDK
+// collisions
+import * as collisions from "./collisions/index";
+export { collisions };
 
-// massa higher order collections
-import * as collections from "./collections/index";
-export { collections };
+// entities
+import * as entities from "./entities/index";
+export { entities };
 
-// massa native wasm bindings
-import * as env from "./env/index";
-export { env };
-
-// massa std functionalities
-export * from "./std";
+// events
+import * as events from "./events/index";
+export { events };
