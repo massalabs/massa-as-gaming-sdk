@@ -1,0 +1,64 @@
+{
+  "name": "@massalabs/massa-as-gaming-sdk",
+  "version": "0.1.0",
+  "description": "Gaming Sdk for Massa",
+  "main": "assembly/index.ts",
+  "types": "assembly/index.ts",
+  "type": "module",
+  "author": "Massa Labs <info@massa.net>",
+  "contributors": [
+    "Evgeni Pirianov evgeni.pirianov@gmail.com"
+  ],
+  "license": "(MIT AND Apache-2.0)",
+  "homepage": "https://github.com/massalabs/massa-as-gaming-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/massalabs/massa-as-gaming-sdk"
+  },
+  "scripts": {
+    "test": "asp",
+    "test:ci": "asp --summary",
+    "prettier": "as-prettier --check assembly",
+    "prettier:fix": "as-prettier --write assembly",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "fmt": "npm run prettier:fix && npm run lint:fix",
+    "fmt:check": "npm run prettier && npm run lint",
+    "release:patch": "npm version patch -m 'Release version %s'",
+    "release:minor": "npm version minor -m 'Release version %s'",
+    "release:major": "npm version major -m 'Release version %s'",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@as-pect/cli": "^8.0.1",
+    "@massalabs/as": "^1.1.1-dev",
+    "@massalabs/as-transformer": "^0.1.1-dev",
+    "@massalabs/prettier-config-as": "^0.0.2",
+    "@massalabs/massa-as-sdk": "^1.2.0",
+    "as-bignum": "^0.2.23",
+    "json-as": "0.5.11",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.27.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-json": "^3.1.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.3"
+  },
+  "keywords": [
+    "massa",
+    "gaming",
+    "smart-contracts",
+    "assemblyscript",
+    "wasm",
+    "sdk"
+  ],
+  "exports": {
+    "./vm-mock": {
+      "import": "./vm-mock/vm.js"
+    }
+  }
+}
