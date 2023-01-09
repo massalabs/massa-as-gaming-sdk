@@ -12,7 +12,7 @@ export class TwoDimProjectile {
   xx: f32 = 0.0;
   yy: f32 = 0.0;
 
-  serializeToString(): string {
+  public serializeToString(): string {
     const stringified = JSON.stringify<TwoDimProjectile>(this);
     return stringified;
   }

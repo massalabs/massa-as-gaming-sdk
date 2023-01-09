@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import {JSON} from 'json-as/assembly';
-import {Rectangle, _isIntersection} from '../utils/rectangle';
+import {Rectangle, _isCollision} from '../collisions/index';
 
 describe('Collisions', () => {
   it('Check for collisions between one rectangle intersecting another one', () => {
@@ -20,8 +20,8 @@ describe('Collisions', () => {
     );
     log<string>(`Rectangle2: ${JSON.stringify(rectangle2InsideRect1)}`);
 
-    assert<bool>(_isIntersection(rect1, rectangle2InsideRect1), 'Expect intersection');
-    assert<bool>(_isIntersection(rectangle2InsideRect1, rect1), 'Expect intersection');
+    assert<bool>(_isCollision(rect1, rectangle2InsideRect1), 'Expect intersection');
+    assert<bool>(_isCollision(rectangle2InsideRect1, rect1), 'Expect intersection');
   });
 
   it('Check for collisions between one rectangle completely enclosed by another one', () => {
@@ -41,8 +41,8 @@ describe('Collisions', () => {
     );
     log<string>(`Rectangle2: ${JSON.stringify(rectangle2InsideRect1)}`);
 
-    assert<bool>(_isIntersection(rect1, rectangle2InsideRect1), 'Expect intersection');
-    assert<bool>(_isIntersection(rectangle2InsideRect1, rect1), 'Expect intersection');
+    assert<bool>(_isCollision(rect1, rectangle2InsideRect1), 'Expect intersection');
+    assert<bool>(_isCollision(rectangle2InsideRect1, rect1), 'Expect intersection');
   });
 
 
@@ -63,7 +63,7 @@ describe('Collisions', () => {
     );
     log<string>(`Rectangle2: ${JSON.stringify(rectangle2)}`);
 
-    assert<bool>(!_isIntersection(rect1, rectangle2), 'Expect intersection');
-    assert<bool>(!_isIntersection(rectangle2, rect1), 'Expect intersection');
+    assert<bool>(!_isCollision(rect1, rectangle2), 'Expect intersection');
+    assert<bool>(!_isCollision(rectangle2, rect1), 'Expect intersection');
   });
 });
